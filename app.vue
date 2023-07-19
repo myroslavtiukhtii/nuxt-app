@@ -1,7 +1,7 @@
 <template>
-    <div class="mainadd i">
+    <NuxtLayout>
         <NuxtPage/>
-    </div>
+    </NuxtLayout>
 </template>
 
 
@@ -11,6 +11,11 @@
 
 
 <style lang="scss">
+
+body {
+    background-color: #cdeffb;
+}
+
 
 [class*='__container'] {
     max-width: 1170px;

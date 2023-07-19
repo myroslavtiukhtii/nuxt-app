@@ -15,5 +15,8 @@
     "nuxt": "^3.6.2",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2"
+  },
+  "dependencies": {
+    "@nuxtjs/router": "^1.7.0"
   }
 }
