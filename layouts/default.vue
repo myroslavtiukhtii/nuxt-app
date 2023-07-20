@@ -1,17 +1,42 @@
 <template>
-    <header class="header mb-10">
-        <div class="header__container bg-amber-200 rounded-md shadow-lg">
-            <ul class="header__list flex p-5">
-                <li class="header__list__item mr-10 font-medium">
-                    <NuxtLink to="/">HOME</NuxtLink>
+    <header class="header z-30">
+        <div class="header__container flex items-center justify-between">
+            <NuxtLink to="/" aria-label="Tesla Logo" class="cursor-pointer z-30">
+                <svg class="header__icon__svg w-44" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg"><path d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"></path>
+                </svg>
+                <span class="visually_hidden">Tesla homepage</span>
+            </NuxtLink>
+            <ul class="header__list flex p-5 text-white space-x-5 z-30">
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Model S</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium">
-                    <NuxtLink to="/about">ABOUT</NuxtLink>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Model 3</NuxtLink>
+                </li>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Model X</NuxtLink>
+                </li>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Model Y</NuxtLink>
+                </li>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Solar Roof</NuxtLink>
+                </li>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Solar Panels</NuxtLink>
+                </li>
+                <li class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink to="/about">Powerwall</NuxtLink>
                 </li>
             </ul>
+            <div class="header__menu text-white font-medium z-30 flex space-x-5">
+                <NuxtLink to="/about">Shop</NuxtLink>
+                <NuxtLink to="/about">Account</NuxtLink>
+                <NuxtLink to="/about">Menu</NuxtLink>
+            </div>
         </div>
     </header>
-    <div class="main">
+    <div class="main relative">
         <div class="main__container">
             <slot />
         </div>
@@ -22,6 +47,37 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+.header__list__item {
+    position: relative;
+    transition: .5s ease-in;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 0;
+        left: -150%;
+        border-radius: inherit;
+        backdrop-filter: blur(8px);
+        background-color: rgba(255, 255, 255, 0.181);
+        transition: .5s ease-in;
+        z-index: -1;
+    }
+
+}
+.header__list__item:hover {
+
+    &::before {
+        left: 0;
+    }
+}
+
+.header__icon__svg {
+    fill: #fff;
+}
 
 </style>
