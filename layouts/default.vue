@@ -7,45 +7,46 @@
                 <span class="visually_hidden">Tesla homepage</span>
             </NuxtLink>
             <ul :class="{ active: isActive }"  class="header__list flex text-white space-x-3 z-30">
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <div @click="openMenu" class="header__list__close">
+                    <Icon name="ep:close" />
+                </div>
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Model S</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Model 3</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Model X</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Model Y</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Solar Roof</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Solar Panels</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Powerwall</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Shop</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Account</NuxtLink>
                 </li>
-                <li class="header__list__item font-medium px-3 py-1 rounded">
+                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
                     <NuxtLink to="/about">Menu</NuxtLink>
                 </li> 
             </ul>
-            <button @click="openMenu()" class="header__menu text-white">Menu</button>
+            <button @click="openMenu" class="header__menu text-white z-30">Menu</button>
         </div>
     </header>
-    <div class="main relative">
-        <div class="main__container">
-            <slot />
-        </div>
-    </div>
+    <main @click="closeMenu" class="main">
+        <slot />
+    </main>
 </template>
 
 <script setup lang="ts">
@@ -55,20 +56,26 @@ import { ref } from 'vue';
 const isActive = ref(false);
 
 const openMenu = () => {
-  isActive.value = !isActive.value; 
+  isActive.value = !isActive.value;
 };
 
+const closeMenu = () => {
+    isActive.value = false
+};
 
 </script>
 
 <style lang="scss" scoped>
 
-.main__container {
-    width: 100%;
-    min-height: 100vh;
+.header__list__close {
+    @media (min-width: 1201px) {
+        display: none;
+    }
 }
 
 .header__list {
+    transition: .5s ease-in;
+
     @media (max-width: 1200px) {
         padding-top: 10%;
         flex-direction: column;
@@ -80,15 +87,22 @@ const openMenu = () => {
         z-index: 40;
         min-height: 100vh;
         width: 50%;
+        opacity: 0;
 
         .header__list__item {
             margin-left: 0;
         }
 
+        .header__list__close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
     }
 }
 
 .header__list.active {
+    opacity: 1;
     right: 0;
 }
 

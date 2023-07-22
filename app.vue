@@ -27,10 +27,4 @@
 }
 
 
-[class*='__container'] {
-    max-width: 1370px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
 </style>
