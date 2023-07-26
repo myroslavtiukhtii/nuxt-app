@@ -26,14 +26,14 @@
             </div>
         </section>
         <section v-for="item in items" class="models relative section">
-            <picture class="models__3__picture" data-alt="Red Model 3 driving down a lakeside road" data-iesrc="../assets/images/Homepage-Model-3-Desktop-NA.avif">
-                <source srcset="../assets/images/Homepage-Model-3-Mobile-NA.avif" media="(max-width: 599px)">
-                <source srcset="../assets/images/Homepage-Model-3-Desktop-NA.avif" media="(min-width: 600px)">
-                <source srcset="../assets/images/Homepage-Model-3-Mobile-NA.avif" media="(min-width: 600px) and (orientation:portrait)">
+            <picture class="models__3__picture" :data-alt="item.alt" :data-iesrc=item.srcDesktop>
+                <source :srcset="item.srcMobile" media="(max-width: 599px)">
+                <source :srcset=item.srcDesktop media="(min-width: 600px)">
+                <source :srcset=item.srcMobile media="(min-width: 600px) and (orientation:portrait)">
                 <img class="models__3__image
                 absolute w-full h-full 
                 object-cover top-0 
-                left-0 -z-10" src="../assets/images/Homepage-Model-3-Desktop-NA.avif" srcset="../assets/images/Homepage-Model-3-Desktop-NA.avif" alt="Red Model 3 driving down a lakeside road">
+                left-0 -z-10" :src=item.srcDesktop :srcset=item.srcDesktop :alt=item.alt>
             </picture>
             <div class="models__container min-h-screen
                 grid grid-cols-1
@@ -57,40 +57,66 @@
 
 <script setup lang="ts">
 
+
 const items = [
     {
         inventory: 'Model 3',
         subtitle: 'Starting at $32,740 After Federal Tax Credit',
+        srcMobile: '/img/homepage/Homepage-Model-3-Mobile-NA.avif',
+        srcDesktop: '/img/homepage/Homepage-Model-3-Desktop-NA.avif',
+        alt: 'Model 3'
     },
     {
         inventory: 'Model Y',
         subtitle: 'Starting at $40,240 After Federal Tax Credit',
+        srcMobile: '/img/homepage/Homepage-ModelY-LHD-Mobile.avif',
+        srcDesktop: '/img/homepage/Homepage-Model-Y-Global-Desktop.avif',
+        alt: 'Model Y'
     },
     {
         inventory: 'Model S',
-        subtitle: 'Explore Inventory'
+        subtitle: 'Explore Inventory',
+        srcMobile: '/img/homepage/Homepage-Model-S-Mobile-LHD-6.22.avif',
+        srcDesktop: '/img/homepage/Homepage-Model-S-Desktop-LHD-6.22.avif',
+        alt: 'Model S'
     },
     {
         inventory: 'Model X',
-        subtitle: 'Explore Inventory'
+        subtitle: 'Explore Inventory',
+        srcMobile: '/img/homepage/Homepage-Model-X-Mobile-LHD_001.avif',
+        srcDesktop: '/img/homepage/Homepage-Model-X-Desktop-LHD.avif',
+        alt: 'Model X'
     },
     {
         inventory: 'Solar Panels',
-        subtitle: 'Schedule a Virtual Consultation'
+        subtitle: 'Schedule a Virtual Consultation',
+        srcMobile: '/img/homepage/Homepage-SolarPanels-Mobile.avif',
+        srcDesktop: '/img/homepage/425_HP_SolarPanels_D.avif',
+        alt: 'Solar Panels'
     },
     {
         inventory: 'Solar Roof',
-        subtitle: 'Produce Clean Energy From Your Roof'
+        subtitle: 'Produce Clean Energy From Your Roof',
+        srcMobile: '/img/homepage/Homepage-SolarRoof-Mobile.avif',
+        srcDesktop: '/img/homepage/Homepage-SolarRoof-Desktop-Global.avif',
+        alt: 'Solar Roof'
     },
     {
         inventory: 'Powerwall',
-        subtitle: ''
+        subtitle: '',
+        srcMobile: '/img/homepage/Homepage-Powerwall-Mobile.avif',
+        srcDesktop: '/img/homepage/Homepage-Powerwall-Desktop.avif',
+        alt: 'Powerwall'
     },
     {
         inventory: 'Accessories',
-        subtitle: ''
+        subtitle: '',
+        srcMobile: '/img/homepage/Homepage-Accessories-Mobile-NA-APAC.avif',
+        srcDesktop: '/img/homepage/Homepage-Accessories-Desktop-NA-APAC.avif',
+        alt: 'Accessories'
     },
 ];
+
 
 </script>
 
