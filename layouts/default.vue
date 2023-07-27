@@ -7,39 +7,12 @@
                 <span class="visually_hidden">Tesla homepage</span>
             </NuxtLink>
             <ul :class="{ active: isActive }"  class="header__list flex text-white space-x-3 z-30">
-                <div @click="openMenu" class="header__list__close">
+                <li @click="openMenu" class="header__list__close">
                     <Icon name="ep:close" />
-                </div>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Model S</NuxtLink>
                 </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Model 3</NuxtLink>
+                <li v-for="item in menuLinks" @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
+                    <NuxtLink :to=item.link> {{ item.title }} </NuxtLink>
                 </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Model X</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Model Y</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Solar Roof</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Solar Panels</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Powerwall</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Shop</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Account</NuxtLink>
-                </li>
-                <li @click="closeMenu" class="header__list__item font-medium px-3 py-1 rounded">
-                    <NuxtLink to="/about">Menu</NuxtLink>
-                </li> 
             </ul>
             <button @click="openMenu" class="header__menu text-white z-30">Menu</button>
         </div>
@@ -51,7 +24,50 @@
 
 <script setup lang="ts">
 
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const menuLinks = [
+    {
+        title: 'Model S',
+        link: '/',
+    },
+    {
+        title: 'Model 3',
+        link: '/',
+    },
+    {
+        title: 'Model X',
+        link: '/',
+    },
+    {
+        title: 'Model Y',
+        link: '/',
+    },
+    {
+        title: 'Solar Roof',
+        link: '/',
+    },
+    {
+        title: 'Solar Panels',
+        link: '/',
+    },
+    {
+        title: 'Powerwall',
+        link: '/',
+    },
+    {
+        title: 'Shop',
+        link: '/',
+    },
+    {
+        title: 'Account',
+        link: '/',
+    },
+    {
+        title: 'Menu',
+        link: '/',
+    }
+];
 
 const isActive = ref(false);
 
@@ -63,6 +79,14 @@ const closeMenu = () => {
     isActive.value = false
 };
 
+onMounted(() => {
+    const HEADERLIST = document.querySelector('.header__list') as HTMLElement;
+    if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+        HEADERLIST.style.display = 'none';
+        console.log(HEADERLIST)
+    }
+});
+
 </script>
 
 <style lang="scss" scoped>
@@ -70,7 +94,6 @@ const closeMenu = () => {
 .header {
     width: 100%;
 }
-
 
 .header__list__close {
     @media (min-width: 1201px) {
