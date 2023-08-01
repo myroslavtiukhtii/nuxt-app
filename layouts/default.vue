@@ -1,16 +1,16 @@
 <template>
-    <header class="header fixed top-0 left-0 z-30 p-5">
+    <header :class="{ active: isActive }" class="header fixed top-0 left-0 z-30 p-5">
         <div class="header__container flex items-center justify-between">
             <NuxtLink to="/" aria-label="Tesla Logo" class="cursor-pointer z-50">
                 <svg class="header__icon w-36 max-sm:w-32" viewBox="0 0 342 35" xmlns="http://www.w3.org/2000/svg"><path d="M0 .1a9.7 9.7 0 0 0 7 7h11l.5.1v27.6h6.8V7.3L26 7h11a9.8 9.8 0 0 0 7-7H0zm238.6 0h-6.8v34.8H263a9.7 9.7 0 0 0 6-6.8h-30.3V0zm-52.3 6.8c3.6-1 6.6-3.8 7.4-6.9l-38.1.1v20.6h31.1v7.2h-24.4a13.6 13.6 0 0 0-8.7 7h39.9v-21h-31.2v-7h24zm116.2 28h6.7v-14h24.6v14h6.7v-21h-38zM85.3 7h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 13.8h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zm0 14.1h26a9.6 9.6 0 0 0 7.1-7H78.3a9.6 9.6 0 0 0 7 7zM308.5 7h26a9.6 9.6 0 0 0 7-7h-40a9.6 9.6 0 0 0 7 7z"></path>
                 </svg>
                 <span class="visually_hidden">Tesla homepage</span>
             </NuxtLink>
-            <ul :class="{ active: isActive }"  class="header__list flex space-x-3 z-30">
+            <ul class="header__list flex space-x-3 z-30">
                 <li @click="openMenu" class="header__list__close">
-                    <Icon name="ep:close" />
+                    <Icon class="w-5 h-5" name="ep:close" />
                 </li>
-                <li v-for="item in menuLinks" @click="closeMenu" class="header__list__item text-black font-medium px-3 py-1 rounded">
+                <li v-for="item in menuLinks" class="header__list__item text-black font-medium px-3 py-1 rounded">
                     <NuxtLink class="list__item__title"> {{ item.title }} </NuxtLink>
                     <div class="hover__block__menu">
                         <ul v-show="item.subItems.length > 0" class="header__hover__menu">
@@ -48,7 +48,7 @@
                     <Icon class="header__icon text-white w-5" name="fa:user" />
                 </NuxtLink>
             </ul>
-            <button @click="openMenu" class="header__menu text-white z-30">Menu</button>
+            <button @click="openMenu" class="header__menu text-white z-40">Menu</button>
         </div>
     </header>
     <main @click="closeMenu" class="main">
@@ -319,8 +319,6 @@ const closeMenu = () => {
     isActive.value = false
 };
 
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -339,33 +337,29 @@ const closeMenu = () => {
     transition: .5s ease-in;
 
     @media (max-width: 1200px) {
-        padding-top: 10%;
+        padding-top: 35px;
         flex-direction: column;
+        gap: 25px;
         position: fixed;
-        top: 0;
-        right: -100%;
+        top: -1%;
+        right: 0;
         background-color: #fff;
-        z-index: 40;
-        min-height: 100vh;
-        width: 50%;
+        width: 100%;
         opacity: 0;
+        visibility: hidden;
+        z-index: 50;
 
         .header__list__item {
             margin-left: 0;
-            color: #000;
         }
 
         .header__list__close {
             position: absolute;
             top: 15px;
             right: 15px;
+            z-index: 50;
         }
     }
-}
-
-.header__list.active {
-    opacity: 1;
-    right: 0;
 }
 
 .header__list__item {
@@ -374,15 +368,18 @@ const closeMenu = () => {
     cursor: pointer;
 
     .list__item__title {
+        display: block;
         mix-blend-mode: difference;
         color: #fff;
         font-weight: 400;
         transition: .5s ease-in;
+        margin-bottom: 15px;
     }
 }
 
 .header__list__item:hover  {
     background-color: #f3f3f385;
+
     .hover__block__menu {
         top: 0;
         opacity: 1;
@@ -417,6 +414,14 @@ const closeMenu = () => {
     visibility: hidden;
     z-index: -1;
     overflow: hidden;
+
+    @media (max-width: 1200px) {
+        position: relative;
+        top: 0;
+        padding: unset;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 }
 
 .header__hover__menu {
@@ -434,6 +439,7 @@ const closeMenu = () => {
     }
 
     .menu__item__img {
+        width: 100%;
         max-width: 230px;
         height: auto;
     }
@@ -444,7 +450,6 @@ const closeMenu = () => {
         gap: 15px;
         text-decoration: underline;
     }
-
 }
 
 .header__hover__links {
@@ -458,6 +463,12 @@ const closeMenu = () => {
         display: flex;
         flex-direction: column;
         gap: 5px;
+    }
+
+    @media (max-width: 1200px) {
+        .hover__links__list {
+            gap: 15px;
+        }
     }
 }
 
@@ -473,8 +484,30 @@ const closeMenu = () => {
 }
 
 .header__icon {
-    fill: #ffffff;
-    color: #ffffff;
+    fill: #000000;
+    color: #000000;
+}
+
+///
+
+.header.active {
+
+    .header__list {
+        opacity: 1;
+        top: 0;
+        visibility: visible;
+        height: 100vh;
+        overflow: scroll;
+    }
+
+    .hover__block__menu {
+        z-index: 40;
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+
 }
 
 </style>
