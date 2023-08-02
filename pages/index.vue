@@ -15,7 +15,7 @@
                     type="video/mp4"/> Your browser does not support the video tag.
                 </video>
                 <button class="hero__button
-                z-30 rounded px-20 py-1
+                z-10 rounded px-20 py-1
                 border-white border-2
                 text-white text-xl
                 max-h-11 self-end mb-20

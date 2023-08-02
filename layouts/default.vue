@@ -6,12 +6,19 @@
                 </svg>
                 <span class="visually_hidden">Tesla homepage</span>
             </NuxtLink>
-            <ul class="header__list flex space-x-3 z-30">
-                <li @click="openMenu" class="header__list__close">
+            <ul class="header__list flex space-x-3 z-40">
+                <li @click="closeMenu" class="header__list__close">
                     <Icon class="w-5 h-5" name="ep:close" />
                 </li>
-                <li v-for="item in menuLinks" class="header__list__item text-black font-medium px-3 py-1 rounded">
-                    <NuxtLink class="list__item__title"> {{ item.title }} </NuxtLink>
+                <li 
+                @click="openMenuLink(index)"
+                :class="{ active: activeIndex === index }"
+                v-for="item, index, in menuLinks"
+                class="header__list__item text-black font-medium px-3 py-1 rounded">
+                    <NuxtLink class="list__item__title">
+                        {{ item.title }} 
+                        <Icon class="item__title__icon w-5 h-5" name="ep:arrow-right" />
+                    </NuxtLink>
                     <div class="hover__block__menu">
                         <ul v-show="item.subItems.length > 0" class="header__hover__menu">
                             <li v-for="subItem in item.subItems" class="hover__menu__item">
@@ -37,14 +44,14 @@
                     </div>
                 </li>
             </ul>
-            <ul class="header__icons flex space-x-3 z-50">
-                <NuxtLink to="/" @click="openMenu" class="header__icons__item">
+            <ul class="header__icons flex space-x-3 z-40">
+                <NuxtLink to="/" class="header__icons__item">
                     <Icon class="header__icon text-white w-5 h-5" name="quill:cog" />
                 </NuxtLink>
-                <NuxtLink to="/" @click="openMenu" class="header__icons__item">
+                <NuxtLink to="/" class="header__icons__item">
                     <Icon class="header__icon text-white w-5" name="streamline:programming-web-server-world-internet-earth-www-globe-worldwide-web-network" />
                 </NuxtLink>
-                <NuxtLink to="/" @click="openMenu" class="header__icons__item">
+                <NuxtLink to="/" class="header__icons__item">
                     <Icon class="header__icon text-white w-5" name="fa:user" />
                 </NuxtLink>
             </ul>
@@ -310,14 +317,27 @@ const menuLinks = [
 ];
 
 const isActive = ref(false);
+const activeIndex = ref(-1);
 
 const openMenu = () => {
   isActive.value = !isActive.value;
 };
 
 const closeMenu = () => {
-    isActive.value = false
+    isActive.value = false;
+    const activeItems = document.querySelectorAll('.header__list__item');
+    activeItems.forEach((item) => {
+        item.classList.remove('active');
+    })
 };
+
+const openMenuLink = (index: number) => {
+    if (activeIndex.value === index) {
+      activeIndex.value = -1; 
+    } else {
+      activeIndex.value = index; 
+    }
+  };
 
 </script>
 
@@ -326,18 +346,16 @@ const closeMenu = () => {
 .header {
     width: 100%;
 }
-
 .header__list__close {
     @media (min-width: 1201px) {
         display: none;
     }
 }
-
 .header__list {
     transition: .5s ease-in;
 
     @media (max-width: 1200px) {
-        padding-top: 35px;
+        padding-top: 55px;
         flex-direction: column;
         gap: 25px;
         position: fixed;
@@ -361,22 +379,36 @@ const closeMenu = () => {
         }
     }
 }
-
 .header__list__item {
     position: relative;
     transition: .5s ease-in;
     cursor: pointer;
 
     .list__item__title {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         mix-blend-mode: difference;
         color: #fff;
         font-weight: 400;
         transition: .5s ease-in;
-        margin-bottom: 15px;
+
+        .item__title__icon {
+            display: none;
+            transition: .3s ease-in;
+        }
+        
+        @media (max-width: 1200px) {
+            font-size: 20px;
+            color: #d2d2d2;
+            margin-bottom: 15px;
+
+            .item__title__icon {
+                display: block;
+            }
+        }
     }
 }
-
 .header__list__item:hover  {
     background-color: #f3f3f385;
 
@@ -386,7 +418,6 @@ const closeMenu = () => {
         visibility: visible;
     }
 }
-
 .header__menu {
     display: none;
     @media (max-width: 1200px) {
@@ -397,7 +428,6 @@ const closeMenu = () => {
         backdrop-filter: blur(25px);
     }
 }
-
 .hover__block__menu {
     position: fixed;
     top: -1%;
@@ -413,7 +443,6 @@ const closeMenu = () => {
     opacity: 0;
     visibility: hidden;
     z-index: -1;
-    overflow: hidden;
 
     @media (max-width: 1200px) {
         position: relative;
@@ -421,14 +450,16 @@ const closeMenu = () => {
         padding: unset;
         flex-wrap: wrap;
         justify-content: flex-start;
+        opacity: 0;
+        display: none;
     }
 }
-
 .header__hover__menu {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    margin-bottom: 45px;
 
     .hover__menu__item {
         padding: 5px;
@@ -451,7 +482,6 @@ const closeMenu = () => {
         text-decoration: underline;
     }
 }
-
 .header__hover__links {
     display: flex;
     justify-items: center;
@@ -471,18 +501,15 @@ const closeMenu = () => {
         }
     }
 }
-
 .header__icon {
     fill: #fff;
     transition: .5s ease-in;
 }
-
 .header__icons {
     @media (max-width: 1200px) {
         display: none;
     }
 }
-
 .header__icon {
     fill: #000000;
     color: #000000;
@@ -500,13 +527,19 @@ const closeMenu = () => {
         overflow: scroll;
     }
 
-    .hover__block__menu {
-        z-index: 40;
-        opacity: 1;
-        visibility: visible;
+    .header__list__item.active {
+        z-index: 50;
+
+        .hover__block__menu {
+            opacity: 1;
+            display: block;
+        }
+
+        .item__title__icon {
+            transform: rotate(90deg);
+        }
+
     }
-
-
 
 }
 
