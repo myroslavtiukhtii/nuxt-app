@@ -49,9 +49,9 @@
                 </div>
                 <div class="models__buttons flex gap-5 flex-wrap justify-center self-end mb-20">
                     <button class="buttons__explore w-60 h-10 bg-white opacity-70 rounded-lg text-lg max-sm:w-full max-sm:text-base
-                    max-sm:px-10 overflow-hidden">Explore Inventory</button>
-                    <button class="buttons__custom w-60 h-10 bg-black opacity-70 rounded-lg text-white text-lg max-sm:w-full max-sm:text-base
-                    max-sm:px-10 overflow-hidden">Custom Order</button>
+                    max-sm:px-10 overflow-hidden">{{ item.button1 }}</button>
+                    <button v-show="item.button2" class="buttons__custom w-60 h-10 bg-black opacity-70 rounded-lg text-white text-lg max-sm:w-full max-sm:text-base
+                    max-sm:px-10 overflow-hidden">{{ item.button2 }}</button>
                 </div>
             </div>
         </section>
@@ -69,7 +69,9 @@ const items = [
         subtitle2: 'After Federal Tax Credit',
         srcMobile: '/img/homepage/Homepage-Model-3-Mobile-NA.avif',
         srcDesktop: '/img/homepage/Homepage-Model-3-Desktop-NA.avif',
-        alt: 'Model 3'
+        alt: 'Model 3',
+        button1: 'Explore Inventory',
+        button2: 'Custom Order'
     },
     {
         inventory: 'Model Y',
@@ -77,49 +79,63 @@ const items = [
         subtitle2: ' After Federal Tax Credit',
         srcMobile: '/img/homepage/Homepage-ModelY-LHD-Mobile.avif',
         srcDesktop: '/img/homepage/Homepage-Model-Y-Global-Desktop.avif',
-        alt: 'Model Y'
+        alt: 'Model Y',
+        button1: 'Explore Inventory',
+        button2: 'Custom Order'
     },
     {
         inventory: 'Model S',
         subtitle1: 'Explore Inventory',
         srcMobile: '/img/homepage/Homepage-Model-S-Mobile-LHD-6.22.avif',
         srcDesktop: '/img/homepage/Homepage-Model-S-Desktop-LHD-6.22.avif',
-        alt: 'Model S'
+        alt: 'Model S',
+        button1: 'Explore Inventory',
+        button2: 'Demo drive'
     },
     {
         inventory: 'Model X',
         subtitle1: 'Explore Inventory',
         srcMobile: '/img/homepage/Homepage-Model-X-Mobile-LHD_001.avif',
         srcDesktop: '/img/homepage/Homepage-Model-X-Desktop-LHD.avif',
-        alt: 'Model X'
+        alt: 'Model X',
+        button1: 'Explore Inventory',
+        button2: 'Demo drive'
     },
     {
         inventory: 'Solar Panels',
         subtitle1: 'Schedule a Virtual Consultation',
         srcMobile: '/img/homepage/Homepage-SolarPanels-Mobile.avif',
         srcDesktop: '/img/homepage/425_HP_SolarPanels_D.avif',
-        alt: 'Solar Panels'
+        alt: 'Solar Panels',
+        button1: 'Order Now',
+        button2: 'Learn more'
     },
     {
         inventory: 'Solar Roof',
         subtitle1: 'Produce Clean Energy From Your Roof',
         srcMobile: '/img/homepage/Homepage-SolarRoof-Mobile.avif',
         srcDesktop: '/img/homepage/Homepage-SolarRoof-Desktop-Global.avif',
-        alt: 'Solar Roof'
+        alt: 'Solar Roof',
+        button1: 'Order Now',
+        button2: 'Learn more'
     },
     {
         inventory: 'Powerwall',
         subtitle1: '',
         srcMobile: '/img/homepage/Homepage-Powerwall-Mobile.avif',
         srcDesktop: '/img/homepage/Homepage-Powerwall-Desktop.avif',
-        alt: 'Powerwall'
+        alt: 'Powerwall',
+        button1: 'Order Now',
+        button2: 'Learn more'
     },
     {
         inventory: 'Accessories',
         subtitle1: '',
         srcMobile: '/img/homepage/Homepage-Accessories-Mobile-NA-APAC.avif',
         srcDesktop: '/img/homepage/Homepage-Accessories-Desktop-NA-APAC.avif',
-        alt: 'Accessories'
+        alt: 'Accessories',
+        button1: 'Shop Now',
+        button2: ''
     },
 ];
 

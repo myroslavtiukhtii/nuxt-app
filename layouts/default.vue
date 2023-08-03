@@ -410,12 +410,14 @@ const openMenuLink = (index: number) => {
     }
 }
 .header__list__item:hover  {
-    background-color: #f3f3f385;
+    @media (any-hover: hover) {
+        background-color: #f3f3f385;
 
-    .hover__block__menu {
-        top: 0;
-        opacity: 1;
-        visibility: visible;
+        .hover__block__menu {
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+        }
     }
 }
 .header__menu {
@@ -447,7 +449,7 @@ const openMenuLink = (index: number) => {
     @media (max-width: 1200px) {
         position: relative;
         top: 0;
-        padding: unset;
+        padding: 5px;
         flex-wrap: wrap;
         justify-content: flex-start;
         opacity: 0;
@@ -504,16 +506,15 @@ const openMenuLink = (index: number) => {
 .header__icon {
     fill: #fff;
     transition: .5s ease-in;
+    fill: #ffffff;
+    color: #ffffff;
 }
 .header__icons {
     @media (max-width: 1200px) {
         display: none;
     }
 }
-.header__icon {
-    fill: #000000;
-    color: #000000;
-}
+
 
 ///
 
@@ -533,6 +534,7 @@ const openMenuLink = (index: number) => {
         .hover__block__menu {
             opacity: 1;
             display: block;
+            visibility: visible;
         }
 
         .item__title__icon {
