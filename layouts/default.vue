@@ -23,10 +23,12 @@
                         <ul v-show="item.subItems.length > 0" class="header__hover__menu">
                             <li v-for="subItem in item.subItems" class="hover__menu__item">
                                 <img class="menu__item__img" :src=subItem.img>
-                                <h3 class="menu__item__title mb-2">{{ subItem.title }}</h3>
-                                <div class="menu__item__links text-sm text-zinc-600">
-                                    <NuxtLink>{{ subItem.subtitle1 }}</NuxtLink>
-                                    <NuxtLink>{{ subItem.subtitle2  }}</NuxtLink>
+                                <div class="menu__item__block">
+                                    <h3 class="menu__item__title mb-2">{{ subItem.title }}</h3>
+                                    <div class="menu__item__links text-sm text-zinc-600">
+                                        <NuxtLink>{{ subItem.subtitle1 }}</NuxtLink>
+                                        <NuxtLink>{{ subItem.subtitle2  }}</NuxtLink>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
@@ -460,7 +462,7 @@ const openMenuLink = (index: number) => {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 45px;
 
     .hover__menu__item {
@@ -469,6 +471,12 @@ const openMenuLink = (index: number) => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .menu__item__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .menu__item__img {
