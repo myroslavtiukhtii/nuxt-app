@@ -11,7 +11,7 @@
                 <video autoplay loop muted
                     class="hero__video absolute w-full h-full object-cover top-0 left-0 -z-10">
                     <source
-                    src="../assets/videos/Homepage-Demo-Drive-Desktop-NA.webm"
+                    src="/videos/Homepage-Demo-Drive-Desktop-NA.webm"
                     type="video/mp4"/> Your browser does not support the video tag.
                 </video>
                 <button class="hero__button
@@ -30,10 +30,10 @@
                 <source :srcset="item.srcMobile" media="(max-width: 599px)">
                 <source :srcset=item.srcDesktop media="(min-width: 600px)">
                 <source :srcset=item.srcMobile media="(min-width: 600px) and (orientation:portrait)">
-                <img class="models__image
+                <nuxt-img class="models__image
                 absolute w-full h-full 
                 object-cover top-0 
-                left-0 -z-10" :src=item.srcDesktop :srcset=item.srcDesktop :alt=item.alt>
+                left-0 -z-10" :src=item.srcDesktop :srcset=item.srcDesktop :alt=item.alt />
             </picture>
             <div class="models__container  min-h-screen
                 grid grid-cols-1

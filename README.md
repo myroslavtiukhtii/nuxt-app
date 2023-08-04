@@ -61,3 +61,10 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+
+deploing
+
+git add -f .output/public
+git commit -m "commit"
+git subtree push --prefix .output/public origin gh-pages
