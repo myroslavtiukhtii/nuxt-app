@@ -6,5 +6,6 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/image',
   ],
-  ssr: false,
-})
+  
+  
+});

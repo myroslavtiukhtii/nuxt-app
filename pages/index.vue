@@ -11,7 +11,7 @@
                 <video autoplay loop muted
                     class="hero__video absolute w-full h-full object-cover top-0 left-0 -z-10">
                     <source
-                    src="/videos/Homepage-Demo-Drive-Desktop-NA.webm"
+                    src="videos/Homepage-Demo-Drive-Desktop-NA.webm"
                     type="video/mp4"/> Your browser does not support the video tag.
                 </video>
                 <button class="hero__button
@@ -67,8 +67,8 @@ const items = [
         inventory: 'Model 3',
         subtitle1: 'Starting at $32,740',
         subtitle2: 'After Federal Tax Credit',
-        srcMobile: '/img/homepage/Homepage-Model-3-Mobile-NA.avif',
-        srcDesktop: '/img/homepage/Homepage-Model-3-Desktop-NA.avif',
+        srcMobile: 'img/homepage/homepage-model-3-mobile-na.png',
+        srcDesktop: 'img/homepage/homepage-model-3-desktop-na.png',
         alt: 'Model 3',
         button1: 'Explore Inventory',
         button2: 'Custom Order'
@@ -77,8 +77,8 @@ const items = [
         inventory: 'Model Y',
         subtitle1: 'Starting at $40,240',
         subtitle2: ' After Federal Tax Credit',
-        srcMobile: '/img/homepage/Homepage-ModelY-LHD-Mobile.avif',
-        srcDesktop: '/img/homepage/Homepage-Model-Y-Global-Desktop.avif',
+        srcMobile: 'img/homepage/Homepage-ModelY-LHD-Mobile.png',
+        srcDesktop: 'img/homepage/Homepage-Model-Y-Global-Desktop.png',
         alt: 'Model Y',
         button1: 'Explore Inventory',
         button2: 'Custom Order'
@@ -86,8 +86,8 @@ const items = [
     {
         inventory: 'Model S',
         subtitle1: 'Explore Inventory',
-        srcMobile: '/img/homepage/Homepage-Model-S-Mobile-LHD-6.22.avif',
-        srcDesktop: '/img/homepage/Homepage-Model-S-Desktop-LHD-6.22.avif',
+        srcMobile: 'img/homepage/Homepage-Model-S-Mobile-LHD-6.22.png',
+        srcDesktop: 'img/homepage/Homepage-Model-S-Desktop-LHD-6.22.png',
         alt: 'Model S',
         button1: 'Explore Inventory',
         button2: 'Demo drive'
@@ -95,8 +95,8 @@ const items = [
     {
         inventory: 'Model X',
         subtitle1: 'Explore Inventory',
-        srcMobile: '/img/homepage/Homepage-Model-X-Mobile-LHD_001.avif',
-        srcDesktop: '/img/homepage/Homepage-Model-X-Desktop-LHD.avif',
+        srcMobile: 'img/homepage/Homepage-Model-X-Mobile-LHD_001.png',
+        srcDesktop: 'img/homepage/Homepage-Model-X-Desktop-LHD.png',
         alt: 'Model X',
         button1: 'Explore Inventory',
         button2: 'Demo drive'
@@ -104,8 +104,8 @@ const items = [
     {
         inventory: 'Solar Panels',
         subtitle1: 'Schedule a Virtual Consultation',
-        srcMobile: '/img/homepage/Homepage-SolarPanels-Mobile.avif',
-        srcDesktop: '/img/homepage/425_HP_SolarPanels_D.avif',
+        srcMobile: 'img/homepage/Homepage-SolarPanels-Mobile.png',
+        srcDesktop: 'img/homepage/425_HP_SolarPanels_D.png',
         alt: 'Solar Panels',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -113,8 +113,8 @@ const items = [
     {
         inventory: 'Solar Roof',
         subtitle1: 'Produce Clean Energy From Your Roof',
-        srcMobile: '/img/homepage/Homepage-SolarRoof-Mobile.avif',
-        srcDesktop: '/img/homepage/Homepage-SolarRoof-Desktop-Global.avif',
+        srcMobile: 'img/homepage/Homepage-SolarRoof-Mobile.png',
+        srcDesktop: 'img/homepage/Homepage-SolarRoof-Desktop-Global.png',
         alt: 'Solar Roof',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -122,8 +122,8 @@ const items = [
     {
         inventory: 'Powerwall',
         subtitle1: '',
-        srcMobile: '/img/homepage/Homepage-Powerwall-Mobile.avif',
-        srcDesktop: '/img/homepage/Homepage-Powerwall-Desktop.avif',
+        srcMobile: 'img/homepage/Homepage-Powerwall-Mobile.png',
+        srcDesktop: 'img/homepage/Homepage-Powerwall-Desktop.png',
         alt: 'Powerwall',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -131,8 +131,8 @@ const items = [
     {
         inventory: 'Accessories',
         subtitle1: '',
-        srcMobile: '/img/homepage/Homepage-Accessories-Mobile-NA-APAC.avif',
-        srcDesktop: '/img/homepage/Homepage-Accessories-Desktop-NA-APAC.avif',
+        srcMobile: 'img/homepage/Homepage-Accessories-Mobile-NA-APAC.png',
+        srcDesktop: 'img/homepage/Homepage-Accessories-Desktop-NA-APAC.png',
         alt: 'Accessories',
         button1: 'Shop Now',
         button2: ''

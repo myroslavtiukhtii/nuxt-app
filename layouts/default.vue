@@ -75,25 +75,25 @@ const menuLinks = [
         subItems: [
             {
                 title: 'Model S',
-                img: '/img/header/vehicles/Mega-Menu-Vehicles-Model-S.avif',
+                img: 'img/header/vehicles/Mega-Menu-Vehicles-Model-S.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Model 3',
-                img: '/img/header/vehicles/Mega-Menu-Vehicles-Model-3.avif',
+                img: 'img/header/vehicles/Mega-Menu-Vehicles-Model-3.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Model X',
-                img: '/img/header/vehicles/Mega-Menu-Vehicles-Model-X.avif',
+                img: 'img/header/vehicles/Mega-Menu-Vehicles-Model-X.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Model Y',
-                img: '/img/header/vehicles/Mega-Menu-Vehicles-Model-Y.avif',
+                img: 'img/header/vehicles/Mega-Menu-Vehicles-Model-Y.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             }
@@ -142,25 +142,25 @@ const menuLinks = [
         subItems: [
             {
                 title: 'Solar Panels',
-                img: '/img/header/energy/Mega-Menu-Energy-Solar-Panels.avif',
+                img: 'img/header/energy/Mega-Menu-Energy-Solar-Panels.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Solar Roof',
-                img: '/img/header/energy/Mega-Menu-Energy-Solar-Roof.avif',
+                img: 'img/header/energy/Mega-Menu-Energy-Solar-Roof.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Powerwall',
-                img: '/img/header/energy/Mega-Menu-Energy-Powerwall-US.avif',
+                img: 'img/header/energy/Mega-Menu-Energy-Powerwall-US.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             },
             {
                 title: 'Megapack',
-                img: '/img/header/energy/Mega-Menu-Energy-Megapack.avif',
+                img: 'img/header/energy/Mega-Menu-Energy-Megapack.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Order',
             }
@@ -185,19 +185,19 @@ const menuLinks = [
         subItems: [
             {
                 title: 'Charging',
-                img: '/img/header/charging/Mega-Menu-Charging-Charging.avif',
+                img: 'img/header/charging/Mega-Menu-Charging-Charging.avif',
                 subtitle1: 'Learn',
                 subtitle2: '',
             },
             {
                 title: 'Home Charging',
-                img: '/img/header/charging/Mega-Menu-Charging-Home-Charging.avif',
+                img: 'img/header/charging/Mega-Menu-Charging-Home-Charging.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Shop',
             },
             {
                 title: 'Supercharging',
-                img: '/img/header/charging/Mega-Menu-Charging-Supercharging.avif',
+                img: 'img/header/charging/Mega-Menu-Charging-Supercharging.avif',
                 subtitle1: 'Learn',
                 subtitle2: 'Find',
             },
@@ -292,25 +292,25 @@ const menuLinks = [
         subItems: [
             {
                 title: 'Charging',
-                img: '/img/header/shop/Mega-Menu-Shop-Charging.avif',
+                img: 'img/header/shop/Mega-Menu-Shop-Charging.avif',
                 subtitle1: '',
                 subtitle2: '',
             },
             {
                 title: 'Vehicle Accessories',
-                img: '/img/header/shop/Mega-Menu-Shop-Vehicle-Accessories.avif',
+                img: 'img/header/shop/Mega-Menu-Shop-Vehicle-Accessories.avif',
                 subtitle1: '',
                 subtitle2: '',
             },
             {
                 title: 'Apparel',
-                img: '/img/header/shop/Mega-Menu-Shop-Apparel.avif',
+                img: 'img/header/shop/Mega-Menu-Shop-Apparel.avif',
                 subtitle1: '',
                 subtitle2: '',
             },
             {
                 title: 'Lifestyle',
-                img: '/img/header/shop/Mega-Menu-Shop-Lifestyle.avif',
+                img: 'img/header/shop/Mega-Menu-Shop-Lifestyle.avif',
                 subtitle1: '',
                 subtitle2: '',
             },
