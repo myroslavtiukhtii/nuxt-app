@@ -30,7 +30,7 @@
                 <source :srcset="item.srcMobile" media="(max-width: 599px)">
                 <source :srcset=item.srcDesktop media="(min-width: 600px)">
                 <source :srcset=item.srcMobile media="(min-width: 600px) and (orientation:portrait)">
-                <nuxt-img class="models__image
+                <nuxt-img loading="lazy" class="models__image
                 absolute w-full h-full 
                 object-cover top-0 
                 left-0 -z-10" :src=item.srcDesktop :srcset=item.srcDesktop :alt=item.alt />

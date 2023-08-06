@@ -9,6 +9,10 @@ export default defineNuxtConfig({
   ssr: false,
   app: {
     baseURL: '/nuxt-app/'
+  },
+  image: {
+    format: ['webp'],
+    quality: 80,
   }
   
   
