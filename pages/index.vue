@@ -11,7 +11,7 @@
                 <video autoplay loop muted
                     class="hero__video absolute w-full h-full object-cover top-0 left-0 -z-10">
                     <source
-                    src="videos/Homepage-Demo-Drive-Desktop-NA.webm"
+                    src="/videos/Homepage-Demo-Drive-Desktop-NA.webm"
                     type="video/mp4"/> Your browser does not support the video tag.
                 </video>
                 <button class="hero__button
