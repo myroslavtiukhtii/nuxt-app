@@ -65,6 +65,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 deploing
 
+.nojekyll
 git add -f .output/public
 git commit -m "commit"
 git subtree push --prefix .output/public origin gh-pages

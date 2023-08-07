@@ -30,7 +30,7 @@
                 <source :srcset="item.srcMobile" media="(max-width: 599px)">
                 <source :srcset=item.srcDesktop media="(min-width: 600px)">
                 <source :srcset=item.srcMobile media="(min-width: 600px) and (orientation:portrait)">
-                <nuxt-img loading="lazy" class="models__image
+                <nuxt-img class="models__image
                 absolute w-full h-full 
                 object-cover top-0 
                 left-0 -z-10" :src=item.srcDesktop :srcset=item.srcDesktop :alt=item.alt />
@@ -67,8 +67,8 @@ const items = [
         inventory: 'Model 3',
         subtitle1: 'Starting at $32,740',
         subtitle2: 'After Federal Tax Credit',
-        srcMobile: 'img/homepage/homepage-model-3-mobile-na.png',
-        srcDesktop: 'img/homepage/homepage-model-3-desktop-na.png',
+        srcMobile: 'img/homepage/homepage-model-3-mobile-na.avif',
+        srcDesktop: 'img/homepage/homepage-model-3-desktop-na.avif',
         alt: 'Model 3',
         button1: 'Explore Inventory',
         button2: 'Custom Order'
@@ -77,8 +77,8 @@ const items = [
         inventory: 'Model Y',
         subtitle1: 'Starting at $40,240',
         subtitle2: ' After Federal Tax Credit',
-        srcMobile: 'img/homepage/Homepage-ModelY-LHD-Mobile.png',
-        srcDesktop: 'img/homepage/Homepage-Model-Y-Global-Desktop.png',
+        srcMobile: 'img/homepage/Homepage-ModelY-LHD-Mobile.avif',
+        srcDesktop: 'img/homepage/Homepage-Model-Y-Global-Desktop.avif',
         alt: 'Model Y',
         button1: 'Explore Inventory',
         button2: 'Custom Order'
@@ -86,8 +86,8 @@ const items = [
     {
         inventory: 'Model S',
         subtitle1: 'Explore Inventory',
-        srcMobile: 'img/homepage/Homepage-Model-S-Mobile-LHD-6.22.png',
-        srcDesktop: 'img/homepage/Homepage-Model-S-Desktop-LHD-6.22.png',
+        srcMobile: 'img/homepage/Homepage-Model-S-Mobile-LHD-6.22.avif',
+        srcDesktop: 'img/homepage/Homepage-Model-S-Desktop-LHD-6.22.avif',
         alt: 'Model S',
         button1: 'Explore Inventory',
         button2: 'Demo drive'
@@ -95,8 +95,8 @@ const items = [
     {
         inventory: 'Model X',
         subtitle1: 'Explore Inventory',
-        srcMobile: 'img/homepage/Homepage-Model-X-Mobile-LHD_001.png',
-        srcDesktop: 'img/homepage/Homepage-Model-X-Desktop-LHD.png',
+        srcMobile: 'img/homepage/Homepage-Model-X-Mobile-LHD_001.avif',
+        srcDesktop: 'img/homepage/Homepage-Model-X-Desktop-LHD.avif',
         alt: 'Model X',
         button1: 'Explore Inventory',
         button2: 'Demo drive'
@@ -104,8 +104,8 @@ const items = [
     {
         inventory: 'Solar Panels',
         subtitle1: 'Schedule a Virtual Consultation',
-        srcMobile: 'img/homepage/Homepage-SolarPanels-Mobile.png',
-        srcDesktop: 'img/homepage/425_HP_SolarPanels_D.png',
+        srcMobile: 'img/homepage/Homepage-SolarPanels-Mobile.avif',
+        srcDesktop: 'img/homepage/425_HP_SolarPanels_D.avif',
         alt: 'Solar Panels',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -113,8 +113,8 @@ const items = [
     {
         inventory: 'Solar Roof',
         subtitle1: 'Produce Clean Energy From Your Roof',
-        srcMobile: 'img/homepage/Homepage-SolarRoof-Mobile.png',
-        srcDesktop: 'img/homepage/Homepage-SolarRoof-Desktop-Global.png',
+        srcMobile: 'img/homepage/Homepage-SolarRoof-Mobile.avif',
+        srcDesktop: 'img/homepage/Homepage-SolarRoof-Desktop-Global.avif',
         alt: 'Solar Roof',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -122,8 +122,8 @@ const items = [
     {
         inventory: 'Powerwall',
         subtitle1: '',
-        srcMobile: 'img/homepage/Homepage-Powerwall-Mobile.png',
-        srcDesktop: 'img/homepage/Homepage-Powerwall-Desktop.png',
+        srcMobile: 'img/homepage/Homepage-Powerwall-Mobile.avif',
+        srcDesktop: 'img/homepage/Homepage-Powerwall-Desktop.avif',
         alt: 'Powerwall',
         button1: 'Order Now',
         button2: 'Learn more'
@@ -131,8 +131,8 @@ const items = [
     {
         inventory: 'Accessories',
         subtitle1: '',
-        srcMobile: 'img/homepage/Homepage-Accessories-Mobile-NA-APAC.png',
-        srcDesktop: 'img/homepage/Homepage-Accessories-Desktop-NA-APAC.png',
+        srcMobile: 'img/homepage/Homepage-Accessories-Mobile-NA-APAC.avif',
+        srcDesktop: 'img/homepage/Homepage-Accessories-Desktop-NA-APAC.avif',
         alt: 'Accessories',
         button1: 'Shop Now',
         button2: ''

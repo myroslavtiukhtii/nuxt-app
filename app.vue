@@ -7,6 +7,15 @@
 
 <script lang="ts" setup>
 
+useSeoMeta({
+  title: 'Tesla Website',
+  ogTitle: 'Tesla Website',
+  description: 'Tesla clone made with Nuxt3 and Tailwind CSS',
+  ogDescription: 'Tesla clone made with Nuxt3 and Tailwind CSS',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
+})
+
 </script>
 
 

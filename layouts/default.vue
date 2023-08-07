@@ -341,6 +341,8 @@ const openMenuLink = (index: number) => {
     }
   };
 
+
+
 </script>
 
 <style lang="scss" scoped>
